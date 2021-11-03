@@ -1,0 +1,141 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #864879;
+  padding: 2rem;
+}
+
+#new-todo-form {
+  position: fixed;
+  top: 2.8rem;
+  right: 2rem;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem 1.3rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  background-color: #fbf3e4;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+#new-todo-form label {
+  text-align: center;
+  color: #864879;
+  font-size: 1.25rem;
+  margin-bottom: 1.85rem;
+}
+button {
+  cursor: pointer;
+  font-size: 1.1rem;
+  border: none;
+  align-self: center;
+  padding: 0.4rem 1.2rem;
+  color: #fff;
+  background-color: #b91646;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: background-color 0.3s;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  -ms-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #ce466f;
+}
+
+#todo-input {
+  outline: none;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #aaa;
+}
+
+#new-todo-form > * {
+  margin: 0.35rem;
+}
+
+#list {
+  padding: 0;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0.8rem;
+  margin: 0.8rem;
+  max-width: 50%;
+  background-color: #e9a6a6;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.list-item-label {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+[data-list-item-checkbox] {
+  margin-right: 5px;
+}
+
+.list-item-label:hover,
+[data-list-item-checkbox]:hover {
+  cursor: pointer;
+}
+
+.list-item-label:hover > [data-list-item-text] {
+  color: #333;
+  text-decoration: line-through;
+}
+
+[data-list-item-checkbox]:checked ~ [data-list-item-text] {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+[data-button-delete] {
+  margin-left: 0.5rem;
+}
+
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px) {
+  body {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  #new-todo-form {
+    position: static;
+    margin: 0 auto;
+    width: 95%;
+  }
+  .list-item {
+    max-width: 100%;
+  }
+}
+
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px) {
+  body {
+    padding: 1rem;
+  }
+}
