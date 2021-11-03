@@ -21,6 +21,7 @@ form.addEventListener("submit", (e) => {
     name: todoName,
     isComplete: false,
     id: new Date().valueOf().toString(),
+    borderColor: "#e9a6a6",
   };
   todos.push(newTodo);
   renderTodo(newTodo);
@@ -37,6 +38,13 @@ list.addEventListener("change", (e) => {
 
   const clickedTodo = todos.find((todo) => todo.id === todoId);
   clickedTodo.isComplete = e.target.checked;
+  if (e.target.checked) {
+    parent.style.borderLeft = "6px solid #00A19D";
+    clickedTodo.borderColor = "#00A19D";
+  } else {
+    parent.style.borderLeft = "6px solid #e9a6a6";
+    clickedTodo.borderColor = "#e9a6a6";
+  }
   saveTodo();
 });
 
@@ -61,6 +69,7 @@ function renderTodo(todo) {
   todoText.innerText = todo.name;
   const checkbox = templateClone.querySelector("[data-list-item-checkbox]");
   checkbox.checked = todo.isComplete;
+  listItem.style.borderLeft = `6px solid ${todo.borderColor}`;
   list.appendChild(templateClone);
 }
 

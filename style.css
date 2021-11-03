@@ -80,12 +80,18 @@ button:hover {
   padding: 0.8rem;
   margin: 0.8rem;
   max-width: 50%;
-  background-color: #e9a6a6;
+  border-left: 6px solid #e9a6a6;
+  background-color: #eee;
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
+  transition: border-left 0.3s;
+  -webkit-transition: border-left 0.3s;
+  -moz-transition: border-left 0.3s;
+  -ms-transition: border-left 0.3s;
+  -o-transition: border-left 0.3s;
 }
 
 .list-item-label {
