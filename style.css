@@ -9,14 +9,9 @@
 body {
   font-family: sans-serif;
   background-color: #864879;
-  padding: 2rem;
 }
 
 #new-todo-form {
-  position: fixed;
-  top: 2.8rem;
-  right: 2rem;
-  width: 40%;
   display: flex;
   flex-direction: column;
   padding: 0.8rem 1.3rem;
@@ -79,7 +74,6 @@ button:hover {
   list-style: none;
   padding: 0.8rem;
   margin: 0.8rem;
-  max-width: 50%;
   border-left: 6px solid #e9a6a6;
   background-color: #eee;
   border-radius: 6px;
@@ -123,8 +117,24 @@ button:hover {
   margin-left: 0.5rem;
 }
 
-/* Small phones to small tablets: from 481px to 767px */
-@media only screen and (max-width: 767px) {
+/* Small phones: from 0 to 480px */
+@media only screen and (min-width: 480px) {
+  body {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 1rem;
+  }
+  #new-todo-form {
+    position: static;
+    margin: 0 auto;
+    width: 97%;
+  }
+  .list-item {
+    max-width: 100%;
+  }
+}
+
+/* @media only screen and (min-width: 900px) {
   body {
     display: flex;
     flex-direction: column-reverse;
@@ -137,11 +147,19 @@ button:hover {
   .list-item {
     max-width: 100%;
   }
-}
+} */
 
-/* Small phones: from 0 to 480px */
-@media only screen and (max-width: 480px) {
+@media only screen and (min-width: 1000px) {
   body {
-    padding: 1rem;
+    padding: 2rem;
+  }
+  #new-todo-form {
+    position: fixed;
+    top: 2.8rem;
+    right: 2rem;
+    width: 40%;
+  }
+  .list-item {
+    max-width: 50%;
   }
 }
